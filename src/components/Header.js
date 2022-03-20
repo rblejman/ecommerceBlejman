@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header = () => {
   return (
