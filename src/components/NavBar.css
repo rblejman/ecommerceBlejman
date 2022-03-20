@@ -1,14 +1,19 @@
+/* https://colorhunt.co/palette/d8e3e751c4d3126e82132c33
+
+
+*/
+
 header {
-  background-color: blue;
+  background-color: rgb(216, 227, 231);
   display: flex;
 }
 
 h1 {
-  color: white;
+  color: rgb(18, 110, 130);
 }
 
 a {
-  color: white;
+  color: rgb(81, 196, 211);
 }
 
 ul {
