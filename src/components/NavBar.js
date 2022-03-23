@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import CartWidget from "./CartWidget";
+
 const NavBar = () => {
   return (
     <header>
@@ -18,7 +19,8 @@ const NavBar = () => {
           </li>
         </ul>
       </nav>
-      <ShoppingCartIcon />
+
+      <CartWidget />
     </header>
   );
 };
