@@ -1,18 +1,48 @@
-import React from "react";
 import "./ItemCount.css";
+import React, { useState } from "react";
 
-export const ItemCount = () => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
+  const [counter, setCounter] = useState(initial);
+  const add = () => {
+    if (stock > 0 && counter < stock) {
+      setCounter(counter + 1);
+    } else {
+      return;
+    }
+  };
+  const remove = () => {
+    if (stock > 0 && counter > 0) {
+      setCounter(counter - 1);
+    } else {
+      return;
+    }
+  };
+  const addCart = () => {
+    if (stock > 0 && counter > 0) {
+      onAdd();
+    } else {
+      console.log("stock insuficiente");
+      return;
+    }
+  };
   return (
     <>
-      <p>Item Count</p>
+      <p>{stock} stock</p>
+      <p>{initial} intial</p>
       <div className="card">
         <p>product</p>
         <div className="card__function">
-          <button className="card__button">-</button>
-          <p className="card__counter">1</p>
-          <button className="card__button">+</button>
+          <button className="card__button" onClick={remove}>
+            -
+          </button>
+          <p className="card__counter">{counter}</p>
+          <button className="card__button" onClick={add}>
+            +
+          </button>
         </div>
-        <button className="card__button-addCart">Add to Cart</button>
+        <button className="card__button-addCart" onClick={addCart}>
+          Add to Cart
+        </button>
       </div>
     </>
   );
