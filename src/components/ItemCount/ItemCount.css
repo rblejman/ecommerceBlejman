@@ -1,0 +1,18 @@
+.card {
+  border: 1px solid green;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: column;
+}
+
+.card__function {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card__button {
+  border: none;
+  background-color: white;
+}
