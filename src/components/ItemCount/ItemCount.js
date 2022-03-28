@@ -6,15 +6,11 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   const add = () => {
     if (stock > 0 && counter < stock) {
       setCounter(counter + 1);
-    } else {
-      return;
     }
   };
   const remove = () => {
     if (stock > 0 && counter > 0) {
       setCounter(counter - 1);
-    } else {
-      return;
     }
   };
   const addCart = () => {
@@ -22,9 +18,9 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
       onAdd(counter);
     } else {
       console.log("stock insuficiente");
-      return;
     }
   };
+
   return (
     <>
       <p>{stock} stock</p>
