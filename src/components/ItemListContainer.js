@@ -5,8 +5,8 @@ const ItemListContainer = ({ greeting }) => {
   let stock = 5;
   let initial = 1;
 
-  const onAdd = () => {
-    console.log("producto agregado a carrito");
+  const onAdd = (counter) => {
+    console.log(`producto agregado ${counter} a carrito`);
   };
 
   return (

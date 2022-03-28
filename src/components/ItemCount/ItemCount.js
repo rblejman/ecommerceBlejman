@@ -19,7 +19,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   };
   const addCart = () => {
     if (stock > 0 && counter > 0) {
-      onAdd();
+      onAdd(counter);
     } else {
       console.log("stock insuficiente");
       return;
