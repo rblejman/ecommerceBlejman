@@ -1,4 +1,5 @@
 import React from "react";
+import "./ItemListContainer.css";
 import { ItemCount } from "../ItemCount/ItemCount.js";
 
 const ItemListContainer = ({ greeting }) => {
@@ -10,10 +11,10 @@ const ItemListContainer = ({ greeting }) => {
   };
 
   return (
-    <>
+    <main className="listContainer">
       <h1>Bienvenido {greeting} a nuestra tienda</h1>
       <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
-    </>
+    </main>
   );
 };
 export default ItemListContainer;
