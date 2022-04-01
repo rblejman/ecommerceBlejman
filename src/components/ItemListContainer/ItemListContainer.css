@@ -1,3 +1,4 @@
 .listContainer {
   background-color: rgb(153, 153, 245);
+  display: flex;
 }

@@ -38,8 +38,6 @@ const initialProducts = [
   },
 ];
 
-const fetchProducts = new Promise((res, rej) => {});
-
 const ItemListContainer = ({ greeting }) => {
   // let stock = 5;
   // let initial = 1;
@@ -58,7 +56,6 @@ const ItemListContainer = ({ greeting }) => {
         console.log("todo bien, productos encontrados");
         setProducts(fetchedProducts);
         console.log("los productos son");
-        console.log(products);
       })
       .catch(() => {
         console.log("todo mal");
@@ -72,7 +69,11 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <main className="listContainer">
       <h1>Bienvenido {greeting} a nuestra tienda</h1>
-      {/* {(products.length = 0 ? <CircularProgress /> : <ItemList />)} */}
+      {products.length === 0 ? (
+        <CircularProgress />
+      ) : (
+        <ItemList products={products} />
+      )}
     </main>
   );
 };
