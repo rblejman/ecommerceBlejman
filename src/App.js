@@ -5,6 +5,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 
 function App() {
   const userName = "Rodrigo";
+  // poner una funcion show que sea pasada por props para que cambie cuando la promesa sea cumplida
   return (
     <>
       <NavBar />

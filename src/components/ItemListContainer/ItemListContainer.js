@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css";
-import { ItemCount } from "../ItemCount/ItemCount.js";
 import { ItemList } from "../ItemList/ItemList.js";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const initialProducts = [
   {
@@ -41,15 +41,28 @@ const initialProducts = [
 const fetchProducts = new Promise((res, rej) => {});
 
 const ItemListContainer = ({ greeting }) => {
-  let stock = 5;
-  let initial = 1;
+  // let stock = 5;
+  // let initial = 1;
+  let showItems = true;
+  const [products, setProducts] = useState([]);
+  const fetchProduct = new Promise((res, rej) => {
+    setTimeout(() => {
+      res(initialProducts);
+    }, 2000);
+  });
 
-  // const [products, setProducts] = useState([]);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setProducts(initialProducts);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    console.log("useEffect se ejecuto");
+    fetchProduct
+      .then((fetchedProducts) => {
+        console.log("todo bien");
+        setProducts(fetchedProducts);
+        console.log(products);
+      })
+      .catch(() => {
+        console.log("todo mal");
+      });
+  }, []);
 
   const onAdd = (counter) => {
     console.log(`producto agregado ${counter} a carrito`);
@@ -59,6 +72,7 @@ const ItemListContainer = ({ greeting }) => {
     <main className="listContainer">
       <h1>Bienvenido {greeting} a nuestra tienda</h1>
       <ItemList />
+      <CircularProgress />
     </main>
   );
 };
