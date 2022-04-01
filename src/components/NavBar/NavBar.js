@@ -9,13 +9,16 @@ const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <a href="#">Juegos</a>
+            <a href="#">Techo</a>
           </li>
           <li>
-            <a href="#">Ofertas</a>
+            <a href="#">Pared</a>
           </li>
           <li>
-            <a href="#">Nosotros</a>
+            <a href="#">Mesa</a>
+          </li>
+          <li>
+            <a href="#">Piso</a>
           </li>
         </ul>
       </nav>
