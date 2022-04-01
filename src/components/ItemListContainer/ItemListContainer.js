@@ -43,7 +43,7 @@ const fetchProducts = new Promise((res, rej) => {});
 const ItemListContainer = ({ greeting }) => {
   // let stock = 5;
   // let initial = 1;
-  let showItems = true;
+
   const [products, setProducts] = useState([]);
   const fetchProduct = new Promise((res, rej) => {
     setTimeout(() => {
@@ -55,8 +55,9 @@ const ItemListContainer = ({ greeting }) => {
     console.log("useEffect se ejecuto");
     fetchProduct
       .then((fetchedProducts) => {
-        console.log("todo bien");
+        console.log("todo bien, productos encontrados");
         setProducts(fetchedProducts);
+        console.log("los productos son");
         console.log(products);
       })
       .catch(() => {
@@ -71,8 +72,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <main className="listContainer">
       <h1>Bienvenido {greeting} a nuestra tienda</h1>
-      <ItemList />
-      <CircularProgress />
+      {/* {(products.length = 0 ? <CircularProgress /> : <ItemList />)} */}
     </main>
   );
 };
