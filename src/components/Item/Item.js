@@ -1,11 +1,12 @@
 import "./Item.css";
-export const Item = (item) => {
+export const Item = ({ product }) => {
+  console.log("hola soy Item", product);
   return (
-    <div className="tarjeta">
-      <img src={item.pictureURL} alt="" />
-      <h1>{item.title}</h1>
-      <h5>{item.description}</h5>
-      <p>{item.price}</p>
+    <div>
+      <img src={product.pictureURL} alt="" />
+      <h1>{product.title}</h1>
+      <h5>{product.description}</h5>
+      <p>{product.price}</p>
       <button>Ver detalle</button>
     </div>
   );
