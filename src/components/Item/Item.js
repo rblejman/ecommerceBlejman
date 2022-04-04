@@ -11,3 +11,5 @@ export const Item = ({ product }) => {
     </div>
   );
 };
+
+// hacer destructuring props
