@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ItemDetail } from "../ItemDetail/Index";
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
