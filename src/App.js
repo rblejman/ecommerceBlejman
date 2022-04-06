@@ -1,7 +1,7 @@
 import "./Reset.css";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar.js";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
+import NavBar from "./components/NavBar/Index.jsx";
+import ItemListContainer from "./components/ItemListContainer/Index.jsx";
 
 function App() {
   const userName = "Rodrigo";

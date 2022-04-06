@@ -1,5 +1,5 @@
 import "./ItemList.css";
-import { Item } from "../Item/Item.js";
+import { Item } from "../Item/Index";
 
 export const ItemList = ({ products }) => {
   console.log("Soy Itemlist los productos son:", products);
