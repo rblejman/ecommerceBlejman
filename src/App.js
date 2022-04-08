@@ -17,10 +17,10 @@ function App() {
         <Route path="/" element={<ItemListContainer greeting={userName} />} />
         {/* item list container pero filtrado */}
         <Route
-          path="/categories/:id"
+          path="/categories/:categoryId"
           element={<ItemListContainer greeting={userName} />}
         />
-        <Route path="/product/:id" element={<ItemDetailContainer />} />
+        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart/" element={<Cart />} />
         <Route path="*" element={<NotFound />}></Route>
 
