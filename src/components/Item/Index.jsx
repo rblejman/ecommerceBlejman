@@ -8,7 +8,7 @@ export const Item = ({ product }) => {
       <h1>{product.title}</h1>
       <h5>{product.description}</h5>
       <p>{product.price}</p>
-      <Link to="/item/:id">
+      <Link to={`/item/${product.id}`}>
         <button>Ver detalle</button>
       </Link>
     </div>

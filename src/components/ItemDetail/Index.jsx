@@ -1,4 +1,5 @@
 export const ItemDetail = ({ product }) => {
+  console.log(`item detail recibido:`, product);
   return (
     <div>
       <h2>ItemDetail</h2>
