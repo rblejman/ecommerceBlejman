@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ItemListContainer.css";
 import { ItemList } from "../ItemList/Index";
 import CircularProgress from "@mui/material/CircularProgress";
+import { useParams } from "react-router-dom";
 
 const initialProducts = [
   {
@@ -10,6 +11,7 @@ const initialProducts = [
     price: 10,
     stock: 60,
     pictureURL: "https://picsum.photos/200",
+    category: "techo",
     id: 1,
   },
   {
@@ -18,6 +20,7 @@ const initialProducts = [
     price: 80,
     stock: 15,
     pictureURL: "https://picsum.photos/200",
+    category: "techo",
     id: 2,
   },
   {
@@ -26,6 +29,7 @@ const initialProducts = [
     price: 30,
     stock: 5,
     pictureURL: "https://picsum.photos/200",
+    category: "piso",
     id: 3,
   },
   {
@@ -34,7 +38,17 @@ const initialProducts = [
     price: 50,
     stock: 20,
     pictureURL: "https://picsum.photos/200",
+    category: "pared",
     id: 4,
+  },
+  {
+    title: "Warghol",
+    description: "lampara cordoba es asi asa",
+    price: 50,
+    stock: 20,
+    pictureURL: "https://picsum.photos/200",
+    category: "mesa",
+    id: 5,
   },
 ];
 
@@ -49,18 +63,25 @@ const ItemListContainer = ({ greeting }) => {
     }, 2000);
   });
 
+  const { categoryId } = useParams();
+  console.log(categoryId);
+
   useEffect(() => {
-    console.log("useEffect se ejecuto");
     fetchProduct
       .then((fetchedProducts) => {
-        console.log("todo bien, productos encontrados");
-        setProducts(fetchedProducts);
-        console.log("los productos son");
+        if (categoryId != undefined) {
+          const filteredProds = fetchedProducts.filter(
+            (product) => product.category == categoryId
+          );
+          setProducts(filteredProds);
+        } else {
+          setProducts(fetchedProducts);
+        }
       })
       .catch(() => {
         console.log("todo mal");
       });
-  }, []);
+  }, [categoryId]);
 
   const onAdd = (counter) => {
     console.log(`producto agregado ${counter} a carrito`);

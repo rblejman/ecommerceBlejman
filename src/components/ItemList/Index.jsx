@@ -2,7 +2,6 @@ import "./ItemList.css";
 import { Item } from "../Item/Index";
 
 export const ItemList = ({ products }) => {
-  console.log("Soy Itemlist los productos son:", products);
   return (
     <div className="card__container">
       {products.map((item) => {
