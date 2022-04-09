@@ -21,11 +21,13 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     fetchProduct
       .then((fetchedProducts) => {
-        const filteredProd = fetchedProducts.filter(
-          (product) => product.id === parseInt(itemId)
-        );
-        setProduct(filteredProd);
-        console.log(`el producto filtrado es:`, filteredProd);
+        if (itemId) {
+          setProduct(
+            fetchedProducts.filter((product) => product.id === parseInt(itemId))
+          );
+        } else {
+          setProduct("no existe");
+        }
       })
       .catch(() => {
         console.log("todo mal");
@@ -40,14 +42,14 @@ export const ItemDetailContainer = () => {
     //   .catch(() => {
     //     console.log("error ItemDetailContainer");
     //   });
-  }, []);
+  }, [itemId]);
 
   return (
     <>
-      {product.length === 0 ? (
-        <CircularProgress />
+      {product[0] ? (
+        <ItemDetail product={product[0]} key={product[0].id} />
       ) : (
-        <ItemDetail product={product} key={product.id} />
+        <CircularProgress />
       )}
     </>
   );
