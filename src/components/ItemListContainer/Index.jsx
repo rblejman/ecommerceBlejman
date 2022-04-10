@@ -84,10 +84,6 @@ const ItemListContainer = ({ greeting }) => {
       });
   }, [categoryId]);
 
-  const onAdd = (counter) => {
-    console.log(`producto agregado ${counter} a carrito`);
-  };
-
   return (
     <main className="listContainer">
       <h1>Bienvenido {greeting} a nuestra tienda</h1>

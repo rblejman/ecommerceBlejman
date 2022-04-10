@@ -2,6 +2,7 @@ import "./ItemCount.css";
 import React, { useState } from "react";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
+  console.log("stock es:", stock);
   const [counter, setCounter] = useState(initial);
   const add = () => {
     if (stock > 0 && counter < stock) {
@@ -24,7 +25,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="card">
-        <p>product</p>
+        <p>Item</p>
         <div className="card__function">
           <button className="card__button" onClick={remove}>
             -
