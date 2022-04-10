@@ -5,7 +5,7 @@ import { initialProducts } from "../mock/InitialProducts";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export const ItemDetailContainer = () => {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState();
 
   const fetchProduct = new Promise((res, rej) => {
     setTimeout(() => {
@@ -22,9 +22,11 @@ export const ItemDetailContainer = () => {
     fetchProduct
       .then((fetchedProducts) => {
         if (itemId) {
-          setProduct(
-            fetchedProducts.filter((product) => product.id === parseInt(itemId))
+          let filteredProduct = fetchedProducts.filter(
+            (product) => product.id === parseInt(itemId)
           );
+
+          setProduct(filteredProduct[0]);
         } else {
           setProduct("no existe");
         }
@@ -46,8 +48,8 @@ export const ItemDetailContainer = () => {
 
   return (
     <>
-      {product[0] ? (
-        <ItemDetail product={product[0]} key={product[0].id} />
+      {product ? (
+        <ItemDetail product={product} key={product.id} />
       ) : (
         <CircularProgress />
       )}

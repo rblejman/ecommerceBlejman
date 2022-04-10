@@ -4,7 +4,7 @@ export const ItemDetail = ({ product }) => {
   console.log(`item detail recibido:`, product);
 
   const onAdd = (counter) => {
-    console.log(`producto agregado ${counter} a carrito`);
+    console.log(`ud. agrego ${counter} prods a carrito`);
   };
 
   return (
@@ -13,7 +13,7 @@ export const ItemDetail = ({ product }) => {
       <img src={product.image} alt="" />
       <h2>{product.title}</h2>
       <p>Price: ${product.price}</p>
-      <ItemCount product={product} initial={0} onAdd={onAdd} />
+      <ItemCount stock={product.stock} initial={0} onAdd={onAdd} />
     </div>
   );
 };
