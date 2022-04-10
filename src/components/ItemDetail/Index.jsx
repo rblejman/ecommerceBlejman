@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { ItemCount } from "../ItemCount/Index";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = ({ product }) => {
   console.log(`item detail recibido:`, product);
-
+  const [quantity, setQuantity] = useState(0);
   const onAdd = (counter) => {
-    console.log(`ud. agrego ${counter} prods a carrito`);
+    setQuantity(counter);
+    console.log(`ud. agrego ${quantity} prods a carrito`);
   };
 
   return (
@@ -13,7 +16,18 @@ export const ItemDetail = ({ product }) => {
       <img src={product.image} alt="" />
       <h2>{product.title}</h2>
       <p>Price: ${product.price}</p>
-      <ItemCount stock={product.stock} initial={0} onAdd={onAdd} />
+      {quantity == 0 ? (
+        <ItemCount
+          stock={product.stock}
+          id={product.id}
+          initial={0}
+          onAdd={onAdd}
+        />
+      ) : (
+        <Link to="/cart">
+          <button>Finalizar Compra</button>
+        </Link>
+      )}
     </div>
   );
 };
