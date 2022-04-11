@@ -1,5 +1,6 @@
 import "./Reset.css";
 import "./App.css";
+
 import { ItemDetailContainer } from "./components/ItemDetailContainer/Index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/Index.jsx";
@@ -10,6 +11,7 @@ import { NotFound } from "./components/NotFound";
 function App() {
   const userName = "Rodrigo";
   // poner una funcion show que sea pasada por props para que cambie cuando la promesa sea cumplida
+
   return (
     <BrowserRouter>
       <NavBar />
