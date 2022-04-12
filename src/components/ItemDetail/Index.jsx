@@ -16,12 +16,12 @@ export const ItemDetail = ({ product }) => {
       <img src={product.image} alt="" />
       <h2>{product.title}</h2>
       <p>Price: ${product.price}</p>
-      {quantity == 0 ? (
+      {quantity === 0 ? (
         <ItemCount
           stock={product.stock}
           id={product.id}
           initial={0}
-          onAdd={onAdd}
+          onAdd={() => onAdd()}
         />
       ) : (
         <Link to="/cart">
