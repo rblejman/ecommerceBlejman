@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/Index";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const categories = [
   { name: "Techo", route: "/categories/techo", id: 1 },

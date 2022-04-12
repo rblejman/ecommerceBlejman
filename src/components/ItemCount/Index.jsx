@@ -2,18 +2,21 @@ import "./ItemCount.css";
 import React, { useState } from "react";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
-  console.log("stock es:", stock);
   const [counter, setCounter] = useState(initial);
   const add = () => {
     if (stock > 0 && counter < stock) {
       setCounter(counter + 1);
+      console.log("se hizo una suma", 1 + counter);
     }
   };
   const remove = () => {
     if (stock > 0 && counter > 0) {
       setCounter(counter - 1);
+      console.log("se hizo una resta", counter);
     }
   };
+
+  //llamo a la funcion onAdd que esta en el padre, itemDetail y paso valor de counter
   const addCart = () => {
     if (stock > 0 && counter > 0) {
       onAdd(counter);

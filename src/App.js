@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/Index.jsx";
 import ItemListContainer from "./components/ItemListContainer/Index.jsx";
 import { Cart } from "./components/Cart/Index";
 import { NotFound } from "./components/NotFound";
+import { CustomProvider } from "./components/Context/CartContext.jsx";
 
 function App() {
   const userName = "Rodrigo";
@@ -14,21 +15,23 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting={userName} />} />
-        {/* item list container pero filtrado */}
-        <Route
-          path="/categories/:categoryId"
-          element={<ItemListContainer greeting={userName} />}
-        />
-        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-        <Route path="/cart/" element={<Cart />} />
-        <Route path="*" element={<NotFound />}></Route>
+      <CustomProvider>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={userName} />} />
+          {/* item list container pero filtrado */}
+          <Route
+            path="/categories/:categoryId"
+            element={<ItemListContainer greeting={userName} />}
+          />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+          <Route path="/cart/" element={<Cart />} />
+          <Route path="*" element={<NotFound />}></Route>
 
-        {/* <ItemListContainer greeting={userName} />
+          {/* <ItemListContainer greeting={userName} />
         <ItemDetailContainer /> */}
-      </Routes>
+        </Routes>
+      </CustomProvider>
     </BrowserRouter>
   );
 }

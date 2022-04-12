@@ -22,11 +22,11 @@ export const ItemDetailContainer = () => {
     fetchProduct
       .then((fetchedProducts) => {
         if (itemId) {
-          let filteredProduct = fetchedProducts.filter(
+          let filteredProduct = fetchedProducts.find(
             (product) => product.id === parseInt(itemId)
           );
 
-          setProduct(filteredProduct[0]);
+          setProduct(filteredProduct);
         } else {
           setProduct("no existe");
         }
@@ -34,16 +34,6 @@ export const ItemDetailContainer = () => {
       .catch(() => {
         console.log("todo mal");
       });
-
-    // console.log("useEffect ItemDetailContainer se ejecuto");
-    // fetch("https://fakestoreapi.com/products/1")
-    //   .then((data) => data.json())
-    //   .then((item) => {
-    //     setProduct(item);
-    //   })
-    //   .catch(() => {
-    //     console.log("error ItemDetailContainer");
-    //   });
   }, [itemId]);
 
   return (
