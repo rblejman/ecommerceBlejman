@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar/Index.jsx";
 import ItemListContainer from "./components/ItemListContainer/Index.jsx";
 import { Cart } from "./components/Cart/Index";
 import { NotFound } from "./components/NotFound";
-import { CustomProvider } from "./components/Context/CartContext.jsx";
+import { CustomProvider } from "./components/Context/CartContext";
 
 function App() {
   const userName = "Rodrigo";
