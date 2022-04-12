@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { myContext } from "../../App";
 import { ItemCount } from "../ItemCount/Index";
 import { Link } from "react-router-dom";
 
