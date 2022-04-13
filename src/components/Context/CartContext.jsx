@@ -11,7 +11,7 @@ export const CustomProvider = ({ children }) => {
     console.log("context addProduct recibe qty:", qty);
     const newProduct = { ...product, qty };
 
-    if (isInCart) {
+    if (isInCart(product.id)) {
       const prodFound = cart.find((product) => product.id === newProduct.id);
       const index = cart.indexOf(prodFound);
       //necesito un auxiliar para no manipular directamente
@@ -23,11 +23,38 @@ export const CustomProvider = ({ children }) => {
       console.log("producto agregado a carrito:", cart);
     }
   };
-  const delProduct = () => {};
-  const isInCart = () => {
-    return false;
+
+  // desde la vista Cart, recibo el id del producto. Dejo pasar todo lo que no sea ese id.
+  const delProduct = (id) => {
+    if (isInCart(id)) {
+      setCart(cart.filter((product) => product.id != id));
+    } else {
+      return console.log("no se pudo eliminar");
+    }
   };
-  const getProductQty = () => {};
+
+  // veo si existe en carrito. Luego busco en cart, accedo a indice y su cantidad.
+  const getProductQty = (id) => {
+    if (isInCart(id)) {
+      const prodFound = cart.find((product) => product.id === id);
+      const index = cart.indexOf(prodFound);
+      return cart[index].qty;
+    } else {
+      return console.log("no se pudo obtener la cantidad de producto");
+    }
+  };
+
+  // busca id en cart, si existe devuelve true sino false
+  const isInCart = (id) => {
+    const prodFound = cart.find((product) => product.id === id);
+
+    if (prodFound) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const clearCart = () => {
     setCart([]);
   };
