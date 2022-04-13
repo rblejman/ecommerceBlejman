@@ -34,13 +34,15 @@ export const CustomProvider = ({ children }) => {
   };
 
   // veo si existe en carrito. Luego busco en cart, accedo a indice y su cantidad.
-  const getProductQty = (id) => {
-    if (isInCart(id)) {
-      const prodFound = cart.find((product) => product.id === id);
-      const index = cart.indexOf(prodFound);
-      return cart[index].qty;
+  const getProductQty = () => {
+    if (cart.length === 0) {
+      return 0;
     } else {
-      return console.log("no se pudo obtener la cantidad de producto");
+      const counter = 0;
+      cart.forEach((product) => {
+        counter += product.qty;
+      });
+      return counter;
     }
   };
 
