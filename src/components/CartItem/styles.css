@@ -1,0 +1,15 @@
+/*cart item style*/
+.cartItem {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgray;
+  margin-top: 0.2rem;
+}
+
+.cartItem__info {
+  display: flex;
+}
+
+.cartItem__info p {
+  margin: 0.2rem 0.2rem;
+}

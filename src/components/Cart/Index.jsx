@@ -10,7 +10,7 @@ export const Cart = () => {
   return (
     <div>
       {cart.length === 0 ? (
-        <CircularProgress />
+        <h2>No hay productos en carrito</h2>
       ) : (
         cart.map((e) => {
           return <CartItem key={e.id} product={e} />;

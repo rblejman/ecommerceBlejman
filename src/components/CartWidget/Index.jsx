@@ -5,10 +5,11 @@ import { cartContext } from "../Context/CartContext.jsx";
 
 const CartWidget = () => {
   const { getProductQty } = useContext(cartContext);
+
   return (
     <>
       <ShoppingCartIcon />
-      <p>{getProductQty}</p>
+      {/* <p>{getProductQty()}</p> */}
     </>
   );
 };
