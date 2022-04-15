@@ -14,8 +14,9 @@ const CartWidget = () => {
 
   return (
     <>
-      <Badge badgeContent={cartQty()} color="primary"></Badge>
-      <ShoppingCartIcon />
+      <Badge badgeContent={cartQty()} color="primary">
+        <ShoppingCartIcon />
+      </Badge>
       {/* <p>{cartQty()}</p> */}
     </>
   );
