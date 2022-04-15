@@ -6,13 +6,11 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   const add = () => {
     if (stock > 0 && count < stock) {
       setCount(count + 1);
-      console.log("se hizo una suma", 1 + count);
     }
   };
   const remove = () => {
     if (stock > 0 && count > 0) {
       setCount(count - 1);
-      console.log("se hizo una resta", count);
     }
   };
 
@@ -39,7 +37,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
           </button>
         </div>
         <button className="card__button-addCart" onClick={addCart}>
-          Add to Cart
+          Agregar a Carrito
         </button>
       </div>
     </>

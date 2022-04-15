@@ -27,7 +27,7 @@ export const CustomProvider = ({ children }) => {
   // desde la vista Cart, recibo el id del producto. Dejo pasar todo lo que no sea ese id.
   const delProduct = (id) => {
     if (isInCart(id)) {
-      setCart(cart.filter((product) => product.id != id));
+      setCart(cart.filter((product) => product.id !== id));
     } else {
       return console.log("no se pudo eliminar");
     }
@@ -38,7 +38,7 @@ export const CustomProvider = ({ children }) => {
     if (cart.length === 0) {
       return 0;
     } else {
-      const counter = 0;
+      let counter = 0;
       cart.forEach((product) => {
         counter += product.qty;
       });
