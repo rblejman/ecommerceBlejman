@@ -4,17 +4,10 @@ import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 import { ItemList } from "../ItemList/Index";
 import CircularProgress from "@mui/material/CircularProgress";
-import { initialProducts } from "../mock/InitialProducts";
-//firebase
 import { db } from "../../firebase/firebase";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
-  // const fetchProduct = new Promise((res, rej) => {
-  //   setTimeout(() => {
-  //     res(initialProducts);
-  //   }, 1000);
-  // });
 
   // recibo la categoria por useparams. Si esta definido lo uso para filtrar, sino traigo todo
   const { categoryId } = useParams();
@@ -34,27 +27,12 @@ const ItemListContainer = ({ greeting }) => {
           return product;
         });
 
-        console.log(prodList);
+        // console.log(prodList);
         setProducts(prodList);
       })
       .catch((error) => {
         console.log(error);
       });
-
-    // fetchProduct
-    //   .then((fetchedProducts) => {
-    //     if (categoryId != undefined) {
-    //       const filteredProds = fetchedProducts.filter(
-    //         (product) => product.category == categoryId
-    //       );
-    //       setProducts(filteredProds);
-    //     } else {
-    //       setProducts(fetchedProducts);
-    //     }
-    //   })
-    //   .catch(() => {
-    //     console.log("todo mal");
-    //   });
   }, [categoryId]);
 
   return (
