@@ -46,6 +46,19 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
+  // valor total de compra
+  const getTotal = () => {
+    if (cart.length === 0) {
+      return 0;
+    } else {
+      let counter = 0;
+      cart.forEach((product) => {
+        counter += product.price * product.qty;
+      });
+      return counter;
+    }
+  };
+
   // busca id en cart, si existe devuelve true sino false
   const isInCart = (id) => {
     const prodFound = cart.find((product) => product.id === id);
@@ -63,7 +76,14 @@ export const CustomProvider = ({ children }) => {
 
   return (
     <Provider
-      value={{ cart, addProduct, delProduct, getProductQty, clearCart }}
+      value={{
+        cart,
+        addProduct,
+        delProduct,
+        getProductQty,
+        getTotal,
+        clearCart,
+      }}
     >
       {children}
     </Provider>
