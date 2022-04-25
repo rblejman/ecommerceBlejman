@@ -1,12 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  serverTimestamp,
+  updateDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { cartContext } from "../Context/CartContext.jsx";
 import CircularProgress from "@mui/material/CircularProgress";
 import { CartItem } from "../CartItem/CartItem.jsx";
 
 export const Cart = () => {
-  const { cart, getTotal } = useContext(cartContext);
+  const { cart, getTotal, clearCart } = useContext(cartContext);
   console.log("prods traidos de cart de context:", cart);
   const [ticket, setTicket] = useState("");
 
@@ -26,6 +33,25 @@ export const Cart = () => {
         setTicket(result.id);
       });
     };
+
+    // actualizo el stock
+    cart.forEach((element) => {
+      const productsCollection = collection(db, "products");
+      const refDoc = doc(productsCollection, element.id);
+      const updateColl = doc(db, "products", element.id);
+      getDoc(refDoc)
+        .then((result) => {
+          const item = result.data();
+          const newStock = item.stock - element.qty;
+          console.log(`nuevo stock actualizado de : `, element.title, newStock);
+          updateDoc(updateColl, { stock: newStock });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    });
+
+    clearCart();
     endPurchase();
   }, []);
 
