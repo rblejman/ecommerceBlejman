@@ -16,15 +16,21 @@ export const Cart = () => {
   const { cart, getTotal, clearCart } = useContext(cartContext);
   const [ticket, setTicket] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [showList, setShowList] = useState(true);
 
   // reemplazar por un formulario que capture dichos valores
-  const buyer = { name: "Juan", surname: "Perez", email: "juanpe@gmail.com" };
+  // const user = { name: "Juan", surname: "Perez", email: "juanpe@gmail.com" };
 
   //Boton final para enviar la compra
-  const submitOrder = () => {
-    const ordersColl = collection(db, "purchase");
+
+  const handleClick = () => {
+    setShowList(false);
+    setShowForm(true);
+  };
+  const submitOrder = (user) => {
+    const ordersColl = collection(db, "orders");
     addDoc(ordersColl, {
-      buyer: buyer,
+      buyer: user,
       items: cart,
       date: serverTimestamp(),
       total: getTotal(),
@@ -48,12 +54,13 @@ export const Cart = () => {
           console.log(error);
         });
     });
+    setShowForm(false);
     clearCart();
   };
 
   return (
     <div>
-      {!showForm && (
+      {showList && (
         <>
           {cart.length === 0 ? (
             <h2>No hay productos en carrito</h2>
@@ -62,7 +69,7 @@ export const Cart = () => {
               return <CartItem key={e.id} product={e} />;
             })
           )}
-          <button onClick={() => setShowForm(true)}> seguir compra</button>
+          <button onClick={handleClick}> seguir compra</button>
         </>
       )}
 
