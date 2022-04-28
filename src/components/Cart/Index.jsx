@@ -11,6 +11,7 @@ import { db } from "../../firebase/firebase";
 import { cartContext } from "../Context/CartContext.jsx";
 import { CartItem } from "../CartItem/CartItem.jsx";
 import { CartForm } from "../CartForm/CartForm";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export const Cart = () => {
   const { cart, getTotal, clearCart } = useContext(cartContext);
@@ -69,12 +70,22 @@ export const Cart = () => {
               return <CartItem key={e.id} product={e} />;
             })
           )}
+          <p>Total: ${getTotal()}</p>
           <button onClick={handleClick}> seguir compra</button>
         </>
       )}
 
       {showForm && <CartForm submitOrder={submitOrder} />}
-      {ticket && <p>Gracias por su compra! Su id es {ticket} </p>}
+
+      {!showList && !showForm && (
+        <>
+          {!ticket ? (
+            <CircularProgress />
+          ) : (
+            <p>Gracias por su compra! Su id es {ticket} </p>
+          )}
+        </>
+      )}
     </div>
   );
 };
