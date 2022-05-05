@@ -1,4 +1,3 @@
-import "./Reset.css";
 import "./App.css";
 
 import { ItemDetailContainer } from "./containers/ItemDetailContainer/Index";
