@@ -1,10 +1,10 @@
 import "./Reset.css";
 import "./App.css";
 
-import { ItemDetailContainer } from "./components/ItemDetailContainer/Index";
+import { ItemDetailContainer } from "./containers/ItemDetailContainer/Index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/Index.jsx";
-import ItemListContainer from "./components/ItemListContainer/Index.jsx";
+import ItemListContainer from "./containers/ItemListContainer/Index";
 import { Cart } from "./components/Cart/Index";
 import { NotFound } from "./components/NotFound";
 import { CustomProvider } from "./components/Context/CartContext";

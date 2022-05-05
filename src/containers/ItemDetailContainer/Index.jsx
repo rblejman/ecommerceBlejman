@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { doc, getDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import { useParams } from "react-router-dom";
-import { ItemDetail } from "../ItemDetail/Index";
+import { ItemDetail } from "../../components/ItemDetail/Index";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export const ItemDetailContainer = () => {

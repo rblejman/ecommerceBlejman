@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import { useParams } from "react-router-dom";
-import "./ItemListContainer.css";
-import { ItemList } from "../ItemList/Index";
-import CircularProgress from "@mui/material/CircularProgress";
 import { db } from "../../firebase/firebase";
+import { useParams } from "react-router-dom";
+import "./styles.css";
+import { ItemList } from "../../components/ItemList/Index";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
