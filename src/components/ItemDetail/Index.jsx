@@ -23,9 +23,14 @@ export const ItemDetail = ({ product }) => {
       <h2>{product.title}</h2>
       <p>Price: ${product.price}</p>
       {finalize ? (
-        <Link to="/cart">
-          <button>Finalizar Compra</button>
-        </Link>
+        <div>
+          <Link to="/">
+            <button>Seguir Comprando</button>
+          </Link>
+          <Link to="/cart">
+            <button>Finalizar Compra</button>
+          </Link>
+        </div>
       ) : (
         <ItemCount
           stock={product.stock}

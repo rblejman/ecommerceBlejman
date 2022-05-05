@@ -71,7 +71,7 @@ export const Cart = () => {
             })
           )}
           <p>Total: ${getTotal()}</p>
-          <button onClick={handleClick}> seguir compra</button>
+          <button onClick={handleClick}>Ir a Checkout</button>
         </>
       )}
 
