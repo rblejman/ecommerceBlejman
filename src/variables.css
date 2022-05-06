@@ -1,13 +1,13 @@
 :root {
-  --color-primary: white;
-  --color-secondary: #16123f;
-  --bg-primary: #abd699;
+  --color-primary: #141850;
+  --color-secondary: #ed7966;
+  --color-white: white;
+  --bg-primary: white;
   --bg-secondary: #75c9b7;
+  --btn-color-primary: #ed7966;
   --color-accent: #ffe26a;
 }
 
-/* Light Lime: #abd699
-Fresh Lemon: #ffe26a
-Teal: #75c9b7
-Mint: #c7ddcc
-Navy: #16123f */
+/*
+#fae5df #f5cac2 #ed7966 #303179 #141850
+*/
