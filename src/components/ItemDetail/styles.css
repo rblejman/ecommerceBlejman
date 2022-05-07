@@ -46,11 +46,24 @@
   border: 1px solid violet;
 }
 .itemDetail__btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
   margin: 0 auto;
+  margin-bottom: 20%;
 }
 
-.itemDetail__btns button {
-  margin: 0 2em;
+.itemDetail__btn {
+  border: none;
+  color: var(--color-secondary);
+  background-color: lightgray;
+  padding: 0.8em;
+  margin: 0 3em;
+  cursor: pointer;
+}
+.accent {
+  background-color: var(--btn-color-primary);
 }
 
 @media screen and (max-width: 900px) {

@@ -26,12 +26,12 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="counter">
-        <div className="card__function">
-          <button className="card__button" onClick={remove}>
+        <div className="counter__function">
+          <button className="counter__button" onClick={remove}>
             -
           </button>
-          <p className="card__count">{count}</p>
-          <button className="card__button" onClick={add}>
+          <p className="counter__number">{count}</p>
+          <button className="counter__button" onClick={add}>
             +
           </button>
         </div>
