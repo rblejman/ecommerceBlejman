@@ -1,4 +1,4 @@
-import "./ItemCount.css";
+import "./styles.css";
 import React, { useState } from "react";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
@@ -25,8 +25,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 
   return (
     <>
-      <div className="card">
-        <p>Item</p>
+      <div className="counter">
         <div className="card__function">
           <button className="card__button" onClick={remove}>
             -

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
+import "./styles.css";
 import { ItemCount } from "../ItemCount/Index";
 import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContext.jsx";
@@ -17,28 +18,37 @@ export const ItemDetail = ({ product }) => {
   };
 
   return (
-    <div>
-      <h2>ItemDetail</h2>
-      <img src={product.image} alt="" />
-      <h2>{product.title}</h2>
-      <p>Price: ${product.price}</p>
-      {finalize ? (
-        <div>
-          <Link to="/">
-            <button>Seguir Comprando</button>
-          </Link>
-          <Link to="/cart">
-            <button>Finalizar Compra</button>
-          </Link>
-        </div>
-      ) : (
-        <ItemCount
-          stock={product.stock}
-          id={product.id}
-          initial={1}
-          onAdd={onAdd}
-        />
-      )}
-    </div>
+    <main className="itemDetail">
+      <section className="itemDetail__container">
+        <img className="itemDetail__image" src={product.image} alt="#" />
+        <article className="itemDetail__info">
+          <div className="itemDetail__text">
+            <h2 className="itemDetail__title">{product.title}</h2>
+            <h6 className="itemDetail__description">{product.description}</h6>
+            <p>
+              Price: ${product.price} | Stock: {product.stock}{" "}
+            </p>
+          </div>
+
+          {finalize ? (
+            <div className="itemDetail__btns">
+              <Link to="/">
+                <button>Seguir Comprando</button>
+              </Link>
+              <Link to="/cart">
+                <button>Finalizar Compra</button>
+              </Link>
+            </div>
+          ) : (
+            <ItemCount
+              stock={product.stock}
+              id={product.id}
+              initial={1}
+              onAdd={onAdd}
+            />
+          )}
+        </article>
+      </section>
+    </main>
   );
 };

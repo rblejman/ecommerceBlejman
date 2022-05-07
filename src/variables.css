@@ -4,6 +4,7 @@
   --color-white: white;
   --bg-primary: white;
   --bg-secondary: #75c9b7;
+  --bg-light: rgba(253, 253, 253, 1);
   --btn-color-primary: #ed7966;
   --color-accent: #ffe26a;
 }
