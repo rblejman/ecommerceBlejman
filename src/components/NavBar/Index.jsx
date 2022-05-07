@@ -27,15 +27,23 @@ const NavBar = () => {
         </Link>
 
         <ul className={clicked ? "navbar__menu active" : "navbar__menu"}>
-          {categories.map((element) => {
-            return (
-              <li>
-                <Link to={element.route} key={element.id}>
-                  {element.name}
-                </Link>
-              </li>
-            );
-          })}
+          <div className="navbar__links">
+            {categories.map((element) => {
+              return (
+                <li>
+                  <Link
+                    to={element.route}
+                    key={element.id}
+                    className="navbar__link"
+                    onClick={handleClick}
+                  >
+                    {element.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </div>
+
           <Link to="/cart" className="navbar__widget">
             <CartWidget />
           </Link>

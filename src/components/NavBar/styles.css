@@ -1,6 +1,7 @@
 header {
   background-color: var(--bg-primary);
   padding: 0.2em 0;
+  border-bottom: 1px solid black;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -12,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .logo {
@@ -22,13 +23,21 @@ header {
 .navbar__menu {
   background-color: var(--bg-primary);
   display: flex;
-  justify-content: flex-end;
-  gap: 1em;
-  /* margin: 0 auto; */
-  border: 1px solid green;
+  justify-content: space-between;
+  flex-grow: 1;
+  /* border: 1px solid green; */
 }
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 0 auto;
+  /* border: 1px solid blue; */
+}
+
 .navbar__widget {
-  margin-left: 10em;
+  /* border: 1px solid pink; */
 }
 .navbar__icon {
   display: none;
@@ -46,26 +55,36 @@ a:hover {
 }
 
 @media screen and (max-width: 900px) {
+  .navbar__logo {
+    margin-left: 0.3125em;
+  }
   .navbar__icon {
     display: block;
+    margin-right: 0.3125em;
   }
   .navbar {
     position: relative;
-    width: 95%;
+    width: 100%;
   }
 
   .navbar__menu {
     position: absolute;
-    top: 50.63px;
+    top: 42px;
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
     text-align: center;
     width: 100%;
+    padding: 0.3em 0;
     z-index: 1;
     display: none;
   }
   .active {
     display: flex;
+  }
+
+  .navbar__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
   }
 }
