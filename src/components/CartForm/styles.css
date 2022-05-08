@@ -1,0 +1,22 @@
+/* CartForm Styles*/
+.cartForm {
+  width: 50%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin: 3em auto;
+  padding: 2em 0;
+  border: 1px solid magenta;
+}
+
+.cartForm__btn {
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  .cartForm {
+    width: 100%;
+  }
+}

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import "./styles.css";
 import {
   addDoc,
   collection,
@@ -60,32 +61,51 @@ export const Cart = () => {
   };
 
   return (
-    <div>
+    <main className="cart">
       {showList && (
         <>
           {cart.length === 0 ? (
-            <h2>No hay productos en carrito</h2>
+            <section className="cart__container justify-center">
+              <h2 className="cart__emptyTitle">No hay productos en carrito</h2>
+            </section>
           ) : (
-            cart.map((e) => {
-              return <CartItem key={e.id} product={e} />;
-            })
+            <section className="cart__container flex-start">
+              <div className="cart__items">
+                {cart.map((e) => {
+                  return <CartItem key={e.id} product={e} />;
+                })}
+              </div>
+              <p className="cart__total">Total: ${getTotal()}</p>
+              <button className="cart__btn--checkout" onClick={handleClick}>
+                Ir a Checkout
+              </button>
+            </section>
           )}
-          <p>Total: ${getTotal()}</p>
-          <button onClick={handleClick}>Ir a Checkout</button>
         </>
       )}
 
-      {showForm && <CartForm submitOrder={submitOrder} />}
+      {showForm && (
+        <section className="cart__container flex-start">
+          <CartForm submitOrder={submitOrder} />
+        </section>
+      )}
 
       {!showList && !showForm && (
         <>
           {!ticket ? (
-            <CircularProgress />
+            <section className="cart__container justify-center">
+              <CircularProgress />
+            </section>
           ) : (
-            <p>Gracias por su compra! Su id es {ticket} </p>
+            <section className="cart__container justify-center">
+              <h2 className="cart__emptyTitle">Gracias por su compra!</h2>
+              <p>
+                Su <strong>ID</strong> de compra es <i>{ticket}</i>
+              </p>
+            </section>
           )}
         </>
       )}
-    </div>
+    </main>
   );
 };

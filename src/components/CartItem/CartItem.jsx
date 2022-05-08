@@ -9,11 +9,11 @@ export const CartItem = ({ product }) => {
   };
   return (
     <div className="cartItem">
-      <div className="cartItem__info">
-        <p>{product.title}</p>
-        <p>{product.qty} u.</p>
-        <p>${product.price}</p>
-      </div>
+      <p>{product.title}</p>
+
+      <p className="cartItem__text">
+        {product.qty} u. | ${product.price}
+      </p>
 
       <button className="cartItem__bttn" onClick={handleClick}>
         x

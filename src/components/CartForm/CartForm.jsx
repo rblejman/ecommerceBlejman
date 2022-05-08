@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 export const CartForm = ({ submitOrder }) => {
   const [user, setUser] = useState({ name: "", phone: "", email: "" });
@@ -18,24 +19,40 @@ export const CartForm = ({ submitOrder }) => {
   // armar el objeto buyer aca y pasar como argumento en submitOrder
   return (
     <form
+      className="cartForm"
       onSubmit={handleSubmit}
       onChange={({ target }) => {
         handleChangeInputs(target);
       }}
     >
-      <label>
-        Nombre
-        <input type="text" name="name" value={user.name} />
+      <label className="cartForm__label">
+        <p>Nombre</p>
+        <input
+          className="cartForm__input"
+          type="text"
+          name="name"
+          value={user.name}
+        />
       </label>
-      <label>
-        Email
-        <input type="email" name="email" value={user.email} />
+      <label className="cartForm__label">
+        <p>Email</p>
+        <input
+          className="cartForm__input"
+          type="email"
+          name="email"
+          value={user.email}
+        />
       </label>
-      <label>
-        Telefono
-        <input type="text" name="phone" value={user.phone} />
+      <label className="cartForm__label">
+        <p>Telefono</p>
+        <input
+          className="cartForm__input"
+          type="text"
+          name="phone"
+          value={user.phone}
+        />
       </label>
-      <input type="submit" value="Comprar" />
+      <input className="cartForm__btn" type="submit" value="Comprar" />
     </form>
   );
 };

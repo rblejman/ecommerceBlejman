@@ -1,15 +1,15 @@
 /*cart item style*/
 .cartItem {
+  width: 90%;
   display: flex;
-  justify-content: space-around;
-  background-color: lightgray;
-  margin-top: 0.2rem;
-}
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0.2em 0;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: white;
 
-.cartItem__info {
-  display: flex;
-}
-
-.cartItem__info p {
-  margin: 0.2rem 0.2rem;
+  border: 1px solid rgb(0, 255, 255);
 }
