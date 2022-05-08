@@ -36,14 +36,17 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId]);
 
   return (
-    <main className="listContainer">
-      <h1>Bienvenido {greeting} a nuestra tienda</h1>
+    <>
       {products.length === 0 ? (
-        <CircularProgress />
+        <div className="ilc_loader">
+          <CircularProgress />
+        </div>
       ) : (
-        <ItemList products={products} />
+        <main className="ilc__container">
+          <ItemList products={products} />
+        </main>
       )}
-    </main>
+    </>
   );
 };
 export default ItemListContainer;

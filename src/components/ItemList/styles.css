@@ -1,0 +1,49 @@
+.ilc__container {
+  border: 3px solid red;
+}
+
+.gallery {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+
+.card {
+  color: var(--color-primary);
+  border: 2px solid black;
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.card__img {
+  object-fit: contain;
+}
+.card__info {
+  padding: 0 0.8em;
+  padding-bottom: 0.8em;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1em 0;
+  color: var(--color-three);
+}
+.card__description {
+  font-weight: 400;
+  text-align: justify;
+}
+
+.card__price {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0.5em 0;
+}

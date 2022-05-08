@@ -1,6 +1,6 @@
-.listContainer {
-  background-color: rgb(153, 153, 245);
+.ilc_loader {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
