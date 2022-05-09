@@ -1,15 +1,12 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "./styles.css";
 export const NotFound = () => {
   return (
-    <>
-      <img
-        src="https://c.tenor.com/xEobCfdzdD4AAAAd/vincent-vega-john-travolta.gif"
-        alt="error 404 page not found"
-      />
+    <div className="notFound">
       <h1>Lo sentimos la ruta no existe</h1>
       <Link to="/">
-        <button>Volver a home</button>
+        <button className="btn">Volver a home</button>
       </Link>
-    </>
+    </div>
   );
 };

@@ -27,15 +27,15 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
     <>
       <div className="counter">
         <div className="counter__function">
-          <button className="counter__button" onClick={remove}>
+          <button className="counter__button btn-border" onClick={remove}>
             -
           </button>
           <p className="counter__number">{count}</p>
-          <button className="counter__button" onClick={add}>
+          <button className="counter__button btn-border" onClick={add}>
             +
           </button>
         </div>
-        <button className="card__button-addCart" onClick={addCart}>
+        <button className="card__button-addCart btn" onClick={addCart}>
           Agregar a Carrito
         </button>
       </div>

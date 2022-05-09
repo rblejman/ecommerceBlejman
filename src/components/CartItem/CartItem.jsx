@@ -8,14 +8,14 @@ export const CartItem = ({ product }) => {
     delProduct(product.id);
   };
   return (
-    <div className="cartItem">
+    <div className="cartItem shadow">
       <p>{product.title}</p>
 
       <p className="cartItem__text">
         {product.qty} u. | ${product.price}
       </p>
 
-      <button className="cartItem__bttn" onClick={handleClick}>
+      <button className="cartItem__btn btn" onClick={handleClick}>
         x
       </button>
     </div>

@@ -8,11 +8,15 @@
   gap: 1em;
   margin: 3em auto;
   padding: 2em 0;
-  border: 1px solid magenta;
+  background-color: var(--bg-secondary);
+  border-radius: 10px;
+}
+.cartForm__label p {
+  padding-bottom: 0.2em;
 }
 
 .cartForm__btn {
-  margin-top: 1em;
+  margin-top: 3em;
 }
 
 @media screen and (max-width: 900px) {

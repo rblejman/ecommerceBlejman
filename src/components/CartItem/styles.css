@@ -9,7 +9,11 @@
   margin: 0.2em 0;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: white;
+  background-color: var(--color-white);
+}
 
-  border: 1px solid rgb(0, 255, 255);
+.cartItem__btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
 }

@@ -19,7 +19,7 @@ export const CartForm = ({ submitOrder }) => {
   // armar el objeto buyer aca y pasar como argumento en submitOrder
   return (
     <form
-      className="cartForm"
+      className="cartForm shadow"
       onSubmit={handleSubmit}
       onChange={({ target }) => {
         handleChangeInputs(target);
@@ -52,7 +52,7 @@ export const CartForm = ({ submitOrder }) => {
           value={user.phone}
         />
       </label>
-      <input className="cartForm__btn" type="submit" value="Comprar" />
+      <input className="cartForm__btn btn" type="submit" value="Comprar" />
     </form>
   );
 };

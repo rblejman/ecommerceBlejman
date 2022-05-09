@@ -33,10 +33,12 @@ export const ItemDetail = ({ product }) => {
           {finalize ? (
             <div className="itemDetail__btns">
               <Link to="/">
-                <button className="itemDetail__btn">Seguir Comprando</button>
+                <button className="itemDetail__btn btn-border">
+                  Seguir Comprando
+                </button>
               </Link>
               <Link to="/cart">
-                <button className="itemDetail__btn accent">
+                <button className="itemDetail__btn btn">
                   Finalizar Compra
                 </button>
               </Link>

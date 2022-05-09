@@ -70,13 +70,13 @@ export const Cart = () => {
             </section>
           ) : (
             <section className="cart__container flex-start">
-              <div className="cart__items">
+              <div className="cart__items shadow">
                 {cart.map((e) => {
                   return <CartItem key={e.id} product={e} />;
                 })}
               </div>
               <p className="cart__total">Total: ${getTotal()}</p>
-              <button className="cart__btn--checkout" onClick={handleClick}>
+              <button className="cart__btn--checkout btn" onClick={handleClick}>
                 Ir a Checkout
               </button>
             </section>
