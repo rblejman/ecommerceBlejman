@@ -1,15 +1,18 @@
 :root {
-  --color-primary: #141850;
-  --color-secondary: white;
-  --color-three: #ed7966;
+  --color-primary: rgb(66, 72, 116);
+  --color-secondary: rgb(244, 238, 255);
+  --color-three: #a6b1e1;
   --color-white: white;
-  --bg-primary: white;
-  --bg-secondary: #75c9b7;
+  --bg-primary: #a6b1e1;
+  --bg-secondary: rgba(244, 238, 255, 0.8);
   --bg-light: rgb(233, 233, 233);
   --btn-color-primary: #ed7966;
   --color-accent: #ffe26a;
+  --color-a-hover: #dcd6f7;
 }
-
 /*
-#fae5df #f5cac2 #ed7966 #303179 #141850
+4 rgb(244, 238, 255)
+3 rgb(220, 214, 247)
+2 rgb(166, 177, 225)
+1 rgb(66, 72, 116)
 */

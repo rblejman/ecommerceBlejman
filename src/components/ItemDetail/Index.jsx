@@ -20,8 +20,8 @@ export const ItemDetail = ({ product }) => {
   return (
     <main className="itemDetail">
       <section className="itemDetail__container">
-        <img className="itemDetail__image" src={product.image} alt="#" />
-        <article className="itemDetail__info">
+        <img className="itemDetail__image shadow" src={product.image} alt="#" />
+        <article className="itemDetail__info shadow">
           <div className="itemDetail__text">
             <h2 className="itemDetail__title">{product.title}</h2>
             <h6 className="itemDetail__description">{product.description}</h6>

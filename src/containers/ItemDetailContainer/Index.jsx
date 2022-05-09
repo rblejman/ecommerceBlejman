@@ -29,7 +29,9 @@ export const ItemDetailContainer = () => {
       {product ? (
         <ItemDetail product={product} key={product.id} />
       ) : (
-        <CircularProgress />
+        <div className="center">
+          <CircularProgress />
+        </div>
       )}
     </>
   );

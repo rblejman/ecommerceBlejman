@@ -43,3 +43,21 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.btn {
+  cursor: pointer;
+  border: none;
+  color: var(--color-white);
+  background-color: var(--bg-primary);
+  border-radius: 5px;
+  padding: 1.125em;
+}
+
+.shadow {
+  box-shadow: 2.8px 2.8px 2.2px rgba(220, 214, 247, 0.02),
+    6.7px 6.7px 5.3px rgba(220, 214, 247, 0.028),
+    12.5px 12.5px 10px rgba(220, 214, 247, 0.035),
+    22.3px 22.3px 17.9px rgba(220, 214, 247, 0.042),
+    41.8px 41.8px 33.4px rgba(220, 214, 247, 0.05),
+    100px 100px 80px rgba(220, 214, 247, 0.07);
+}

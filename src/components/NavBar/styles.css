@@ -48,10 +48,11 @@ a:link,
 a:visited {
   color: var(--color-primary);
   text-decoration: none;
+  font-weight: 700;
 }
 
 a:hover {
-  color: var(--color-secondary);
+  color: var(--color-a-hover);
 }
 
 @media screen and (max-width: 900px) {

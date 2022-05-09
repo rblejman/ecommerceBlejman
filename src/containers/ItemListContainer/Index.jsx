@@ -38,7 +38,7 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <>
       {products.length === 0 ? (
-        <div className="ilc_loader">
+        <div className="center">
           <CircularProgress />
         </div>
       ) : (
