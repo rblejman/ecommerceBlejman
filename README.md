@@ -1,4 +1,4 @@
-# React Lighting Business E-commerce
+# React Lightning Business E-commerce
 
 ## General info
 
