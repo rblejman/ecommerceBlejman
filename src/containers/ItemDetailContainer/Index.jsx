@@ -7,7 +7,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
-  //llega id de producto por router params
   const { itemId } = useParams();
 
   useEffect(() => {

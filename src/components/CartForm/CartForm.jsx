@@ -16,7 +16,6 @@ export const CartForm = ({ submitOrder }) => {
     setUser({ ...user, [target.name]: target.value });
   };
 
-  // armar el objeto buyer aca y pasar como argumento en submitOrder
   return (
     <form
       className="cartForm shadow"

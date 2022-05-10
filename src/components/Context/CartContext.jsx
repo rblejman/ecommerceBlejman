@@ -5,9 +5,7 @@ const { Provider } = cartContext;
 export const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  //recibe obj producto y valor qty
   const addProduct = (product, qty) => {
-    //agrego qty como nuevo valor al objeto producto.
     console.log("context addProduct recibe qty:", qty);
     const newProduct = { ...product, qty };
 
@@ -24,7 +22,6 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
-  // desde la vista Cart, recibo el id del producto. Dejo pasar todo lo que no sea ese id.
   const delProduct = (id) => {
     if (isInCart(id)) {
       setCart(cart.filter((product) => product.id !== id));
@@ -33,7 +30,6 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
-  // veo si existe en carrito. Luego busco en cart, accedo a indice y su cantidad.
   const getProductQty = () => {
     if (cart.length === 0) {
       return 0;
@@ -46,7 +42,6 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
-  // valor total de compra
   const getTotal = () => {
     if (cart.length === 0) {
       return 0;
@@ -59,7 +54,6 @@ export const CustomProvider = ({ children }) => {
     }
   };
 
-  // busca id en cart, si existe devuelve true sino false
   const isInCart = (id) => {
     const prodFound = cart.find((product) => product.id === id);
 

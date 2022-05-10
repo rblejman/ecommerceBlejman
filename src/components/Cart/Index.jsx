@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "./styles.css";
 import {
   addDoc,
@@ -20,11 +20,6 @@ export const Cart = () => {
   const [showForm, setShowForm] = useState(false);
   const [showList, setShowList] = useState(true);
 
-  // reemplazar por un formulario que capture dichos valores
-  // const user = { name: "Juan", surname: "Perez", email: "juanpe@gmail.com" };
-
-  //Boton final para enviar la compra
-
   const handleClick = () => {
     setShowList(false);
     setShowForm(true);
@@ -40,7 +35,6 @@ export const Cart = () => {
       setTicket(result.id);
     });
 
-    // actualizo el stock
     cart.forEach((element) => {
       const productsCollection = collection(db, "products");
       const refDoc = doc(productsCollection, element.id);

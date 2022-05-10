@@ -8,13 +8,13 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
       setCount(count + 1);
     }
   };
+
   const remove = () => {
     if (stock > 0 && count > 0) {
       setCount(count - 1);
     }
   };
 
-  //llamo a la funcion onAdd que esta en el padre, itemDetail y paso valor de count
   const addCart = () => {
     if (stock > 0 && count > 0) {
       onAdd(count);

@@ -64,7 +64,7 @@ a:hover {
 
   .navbar__menu {
     position: absolute;
-    top: 42px;
+    top: 47px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -75,11 +75,19 @@ a:hover {
   }
   .active {
     display: flex;
+    gap: 0.5em;
+    border-top: 0.1em solid var(--color-primary);
   }
 
   .navbar__links {
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.5em;
+  }
+  .navbar__links::after {
+    content: "";
+    height: 0.1em;
+    width: 10em;
+    background-color: var(--color-secondary);
   }
 }

@@ -1,18 +1,15 @@
 import { useContext } from "react";
 import { useState } from "react";
-import "./styles.css";
-import { ItemCount } from "../ItemCount/Index";
 import { Link } from "react-router-dom";
 import { cartContext } from "../Context/CartContext.jsx";
+import "./styles.css";
+import { ItemCount } from "../ItemCount/Index";
 
 export const ItemDetail = ({ product }) => {
   const [finalize, setFinalize] = useState(false);
   const { addProduct } = useContext(cartContext);
-
-  //recibo de ItemCount la cantidad de producto por medio de counter, el mismo llega bien. No esta aceptando el setQuantity el valor de counter
   const onAdd = (count) => {
     console.log("item Detail: count es:", count);
-    // al pasarlo count me dice que es undefined al parecer
     addProduct(product, count);
     setFinalize(true);
   };
