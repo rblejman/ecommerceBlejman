@@ -23,6 +23,10 @@
   max-width: 400px;
   margin: 1em 1em;
   overflow: hidden;
+  transition: 0.5s;
+}
+.card:hover {
+  transform: scale(102%);
 }
 
 .card__img {

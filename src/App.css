@@ -53,12 +53,18 @@ img {
   padding: 1.125em;
 }
 
+.btn:hover {
+  background-color: var(--color-a-hover);
+}
 .btn-border {
   cursor: pointer;
   background-color: transparent;
   border: 0.1em solid var(--color-primary);
   border-radius: 5px;
   padding: 1.025em;
+}
+.btn-border:hover {
+  background-color: var(--bg-light);
 }
 
 .shadow {

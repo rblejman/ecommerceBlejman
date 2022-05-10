@@ -10,6 +10,10 @@
 .itemDetail__image {
   width: 48%;
   border-radius: 10px;
+  transition: 1s;
+}
+.itemDetail__image:hover {
+  transform: scale(1.1);
 }
 
 .itemDetail__info {

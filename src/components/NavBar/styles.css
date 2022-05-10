@@ -1,8 +1,8 @@
 header {
   background-color: var(--bg-primary);
   padding: 0.2em 0;
-  border-bottom: 1px solid black;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
 .navbar {
@@ -13,7 +13,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 1px solid red; */
 }
 
 .logo {
@@ -25,7 +24,6 @@ header {
   display: flex;
   justify-content: space-between;
   flex-grow: 1;
-  /* border: 1px solid green; */
 }
 
 .navbar__links {
@@ -33,12 +31,8 @@ header {
   align-items: center;
   gap: 1em;
   margin: 0 auto;
-  /* border: 1px solid blue; */
 }
 
-.navbar__widget {
-  /* border: 1px solid pink; */
-}
 .navbar__icon {
   display: none;
 }
@@ -52,7 +46,7 @@ a:visited {
 }
 
 a:hover {
-  color: var(--color-a-hover);
+  color: var(--color-secondary);
 }
 
 @media screen and (max-width: 900px) {
